@@ -24,6 +24,13 @@ function promiseFunction() {
     }
 }
 
+// The "async" keyword exposes us to a Promise object, so we also have:
+function promiseAllFunction() {
+    let promises = [async one(), async two(), async three()]
+    let result = await Promise.all(promises)
+    console.log(result)
+}
+
 // If we don't use either, we should error out.
 function forgetfulFunction() {
     // Errors out, easily showing people if they forgot to use async/await.
