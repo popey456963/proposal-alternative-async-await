@@ -73,3 +73,4 @@ Hence, this proposal implements new behaviour for the "async" and "await" keywor
  - Await will prevent this branch from continueing until a value is returned from the asynchronous function.
  - Async will return a promise instantly.
 
+A conversation thread for this topic can be found at [esdiscuss](https://esdiscuss.org/topic/enable-async-await-to-work-on-functions-that-dont-just-return-promises)
