@@ -18,10 +18,10 @@ function syncFunction() {
 
 // Or we can use the "async" keyword so that it returns a promise.
 function promiseFunction() {
-  let promise = async asyncFunction()
-  promise.then((data => {
-    console.log(data)
-  }
+    let promise = async asyncFunction()
+    promise.then((data => {
+        console.log(data)
+    }
 }
 
 // If we don't use either, we should error out.
