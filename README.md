@@ -5,15 +5,15 @@
 ```javascript
 // Our async function, note the special "async return".
 async function asyncFunction() {
-	someAsync('data', (err, data) => {
-		async return [err, data]
-	})
+    someAsync('data', (err, data) => {
+        async return [err, data]
+    })
 }
 
 // We can make this function appear synchronous by using the "await" keyword.
 function syncFunction() {
-	let [err, data] = await asyncFunction()
-  console.log(data)
+    let [err, data] = await asyncFunction()
+    console.log(data)
 }
 
 // Or we can use the "async" keyword so that it returns a promise.
@@ -26,8 +26,8 @@ function promiseFunction() {
 
 // If we don't use either, we should error out.
 function forgetfulFunction() {
-  // Errors out, easily showing people if they forgot to use async/await.
-  let [err, data] = asyncFunction()
+    // Errors out, easily showing people if they forgot to use async/await.
+    let [err, data] = asyncFunction()
 }
 ```
 
@@ -37,14 +37,14 @@ The main reason for this proposal was because I was finding myself writing so ma
 
 ```javascript
 async function asyncFunction() {
-  return new Promise((resolve, reject) => {
-    someAsync('data', (err, data) => {
-      if (err) {
-        reject(err); return;
-      }
-      resolve(data);
-    });
-  }); 
+    return new Promise((resolve, reject) => {
+        someAsync('data', (err, data) => {
+            if (err) {
+                reject(err); return;
+            }
+        resolve(data);
+        });
+    }); 
 }
 ```
 
@@ -52,9 +52,9 @@ Wouldn't the following be much easier to understand:
 
 ```javascript
 async function asyncFunction() {
-	someAsync('data', (err, data) => {
-		async return [err, data]
-	})
+    someAsync('data', (err, data) => {
+        async return [err, data]
+    })
 }
 ```
 
